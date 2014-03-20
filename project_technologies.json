@@ -1,16 +1,23 @@
 {
     "technologies": {
         "apis": [
-            "insert apis"
+            "web speech"
         ],
         "platforms": [
-            "insert platforms"
+            "android",
+			"windows"
         ],
         "toolkits": [
-            "insert toolkits"
+            "adt",
+			"opencv",
+			"air sdk",
+			"agal",
+			"nodejs"
         ]
     },
     "themes": [
-        "insert themes"
+        "evolution",
+		"social change",
+		"human computer interaction"
     ]
 }
