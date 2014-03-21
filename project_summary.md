@@ -25,6 +25,7 @@ Coming soon
 Coming soon
 
 ##Technologies
+
 ####Plus Points (input points)
 - Android OS device (probably a Nexus5 or Nexus7)
 - Android SDK/Java
