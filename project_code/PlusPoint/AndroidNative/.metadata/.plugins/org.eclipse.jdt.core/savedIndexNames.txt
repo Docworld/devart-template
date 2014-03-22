@@ -1,0 +1,5 @@
+INDEX VERSION 1.126+C:\Development\DifferenceEngine\devart-template\project_code\PlusPoint\AndroidNative\.metadata\.plugins\org.eclipse.jdt.core
+2935849019.index
+3273410226.index
+2556108368.index
+2637571142.index

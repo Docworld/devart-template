@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;local.properties&apos; to &apos;App&apos;&#x0D;&#x0A;- Original project: &apos;App&apos;&#x0D;&#x0A;- Destination element: &apos;App&apos;&#x0D;&#x0A;- Original element: &apos;local.properties&apos;" description="Copy file" destination="=App" element1="libs/OpenCV-2.4.5-android-sdk/sdk/java/local.properties" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1395492585571" units="0" version="1.0"/>
+</session>
