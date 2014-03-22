@@ -622,3 +622,6 @@ Binding(CTRL+SHIFT+C,
 
 !ENTRY com.android.ide.eclipse.adt 1 0 2014-03-22 12:53:43.023
 !MESSAGE No valid Android XML Editor Delegate found for file /App/custom_rules.xml [Res null, type null]
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-22 14:33:56.507
+!MESSAGE No valid Android XML Editor Delegate found for file /App/custom_rules.xml [Res null, type null]
