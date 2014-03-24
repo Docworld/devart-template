@@ -4,8 +4,6 @@ package com.seanjd.devart.models
 	import away3d.materials.ColorMaterial;
 	import away3d.materials.MaterialBase;
 	import away3d.primitives.SphereGeometry;
-	import com.seanjd.devart.DifferenceEngine;
-	import com.seanjd.devart.views.ParticleContainer;
 	
 	/**
 	 * ...
@@ -32,22 +30,9 @@ package com.seanjd.devart.models
 			var sizes:Array = [2.5, 1.8, 1.8, 1.6, 1.4, 1.3];
 			
 			for (var i:uint = 0; i < NUM_PARTICLES; i++) {
-				_geoms.push(new SphereGeometry(sizes[i]));
+				_geoms.push(new SphereGeometry(sizes[i], 4, 4));
 			}
 			
-		}
-		
-		private function createGeom(i:uint):Geometry {
-			//just create spheres for now for simplicity
-			var sphere:SphereGeometry = new SphereGeometry(2 + Math.random() * 4);
-			return sphere;
-		}
-		
-		
-		private function createMat(i:uint):MaterialBase {
-			var material:ColorMaterial = new ColorMaterial(0xCCCCCC);// (Math.random() * 0xFFFFFF);
-			material.lightPicker = DifferenceEngine.lightPicker;
-			return material;
 		}
 		
 		public function get positions():Vector.<Point3D> {
@@ -55,9 +40,6 @@ package com.seanjd.devart.models
 		}
 		public function get geoms():Vector.<Geometry> {
 			return _geoms;
-		}
-		public function get mats():Vector.<MaterialBase> {
-			return _mats;
 		}
 	
 	}

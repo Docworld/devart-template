@@ -10,7 +10,7 @@ package {
 	 */
 
 	//set stage resolution & color using metadata
-	[SWF(width=1920, height=1080, backgroundColor=0x000000)]
+	[SWF(width=1680, height=1050, backgroundColor=0x000000, frameRate=60)]
 	public class Main extends Sprite {
 		
 		private var _differenceEngine:DifferenceEngine;

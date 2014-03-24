@@ -2,11 +2,14 @@ package com.seanjd.devart {
 	
 	import away3d.containers.View3D;
 	import away3d.debug.AwayStats;
+	import away3d.lights.DirectionalLight;
 	import away3d.lights.PointLight;
 	import away3d.materials.lightpickers.StaticLightPicker;
 	import com.seanjd.devart.models.Settings;
+	import com.seanjd.devart.models.SignatureData;
 	import com.seanjd.devart.views.BoundaryContainer;
 	import com.seanjd.devart.views.ParticleContainer;
+	import com.seanjd.devart.views.SignatureParticle;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
@@ -21,7 +24,9 @@ package com.seanjd.devart {
 	public class DifferenceEngine extends Sprite {
 		
 		private var _view:View3D;
+		//lights
 		private var _coreLight:PointLight;
+		private var _directionalLight:DirectionalLight;
 		
 		private var _boundaryContainer:BoundaryContainer;
 		private var _mainParticleContainer:ParticleContainer;
@@ -44,15 +49,17 @@ package com.seanjd.devart {
 			if(Settings.DEBUG) addChild(new AwayStats(_view));
 			
 			//setup the camera
-			_view.camera.z = -600;
-			_view.camera.y = 500;
+			_view.camera.z = -1200;
+			_view.camera.y = 5;
 			_view.camera.lookAt(new Vector3D());
 			
 			//add a light in centre of scene
 			_coreLight = addPointLight(0, 0, -500, 1500, Settings.CORE_LIGHT_COLOR);
 			_view.scene.addChild(_coreLight);
+			_directionalLight = addDirectionalLight();
+			_view.scene.addChild(_directionalLight);
 			
-			lightPicker = new StaticLightPicker([_coreLight]);
+			lightPicker = new StaticLightPicker([_coreLight, _directionalLight]);
 			
 			//_boundaryContainer = new BoundaryContainer();
 			//_view.scene.addChild(_boundaryContainer);
@@ -75,9 +82,15 @@ package com.seanjd.devart {
 			pointLight.color = color;
 			return pointLight;
 		}
+		private function addDirectionalLight():DirectionalLight {
+			var dLight:DirectionalLight = new DirectionalLight(1, 0, -0.5);
+			dLight.color = 0xFFFFFF;
+			return dLight;
+		}
 		
 		//main render loop
 		private function render(e:Event):void {
+			_mainParticleContainer.rotationX -= 0.05
 			_mainParticleContainer.rotationY += 0.5;
 			_view.render();
 		}

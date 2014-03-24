@@ -29,13 +29,6 @@ package com.seanjd.devart.views {
 			for (var i:uint = 0; i < data.geoms.length; i++){
 				var mesh:Mesh = new Mesh(data.geoms[i], _mat);
 				
-				/*mesh.x = i * Math.random() * 5;
-				if (Math.random() < 0.5) mesh.x = -mesh.x;
-				mesh.y = i * Math.random() * 5;
-				if (Math.random() < 0.5) mesh.y = -mesh.y;
-				mesh.z = i * Math.random() * 5;
-				if (Math.random() < 0.5) mesh.z = -mesh.z;*/
-				
 				mesh.x = data.positions[i].x;
 				mesh.y = data.positions[i].y;
 				mesh.z = data.positions[i].z;
