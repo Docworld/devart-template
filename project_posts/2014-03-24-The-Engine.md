@@ -7,7 +7,9 @@ My aim here was to test frame-rates and performance, so I cloned and added the a
 
 ####Screengrabs of Difference Engine taken over time
 ![Shot 1](../project_images/particles/particleTest_1.jpg?raw=true "Shot 1")
+
 ![Shot 2](../project_images/particles/particleTest_2.jpg?raw=true "Shot 2") 
+
 ![Shot 3](../project_images/particles/particleTest_3.jpg?raw=true "Shot 3")  
 
 ####Results
