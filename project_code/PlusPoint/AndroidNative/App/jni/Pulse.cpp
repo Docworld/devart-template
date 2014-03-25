@@ -10,8 +10,8 @@ using namespace cv;
 
 Pulse::Pulse() {
     maxSignalSize = 100;
-    relativeMinFaceSize = 0.4;
-    deleteFaceIn = 1;
+    relativeMinFaceSize = 0.3;//0.4;
+    deleteFaceIn = 3;//1;
     holdPulseFor = 30;
     fps = 0;
     evm.magnify = true;
