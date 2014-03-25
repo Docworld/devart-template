@@ -38,7 +38,7 @@ package com.seanjd.devart.views {
 			_mesh = new Mesh(new Geometry());
 			addChild(_mesh);
 			
-			Main.ref.addEventListener(Event.ENTER_FRAME, updateRotations);
+			//Main.ref.addEventListener(Event.ENTER_FRAME, updateRotations);
 			
 			updateRandomly();
 		}
@@ -55,9 +55,8 @@ package com.seanjd.devart.views {
 			_mesh.geometry.dispose();
 			
 			var randomColorInt:int = Math.floor(Math.random() * COLORS.length);
-			var color:uint = COLORS[randomColorInt];// * 0xFFFFFF;
-			//color = Math.random() * 0xFFFFFF;
-			trace("Color is: " + color.toString(16));
+			var color:uint = COLORS[randomColorInt];
+
 			var numGeoms:int = 2 + Math.ceil(Math.random() * 6);
 			for (var i:int = 0; i < numGeoms; i++) addRandomMeshToGeometry(i, color);	
 			addNoise();
@@ -97,7 +96,6 @@ package com.seanjd.devart.views {
 			mesh.y = Math.sin(Math.random()) * index * positionMultiplier;
 			mesh.z = Math.sin(Math.random()) * index * positionMultiplier;
 			_merge.apply(_mesh, mesh);
-			//_mesh.geometry = _geometry;
 		}
 		
 		private function getRandomMaterial(color:uint):MaterialBase {
