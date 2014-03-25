@@ -7,7 +7,7 @@ package com.seanjd.devart.models {
 	
 	public class Settings {
 
-		static public const DEBUG:Boolean = true;
+		static public const DEBUG:Boolean = false;
 		
 		static public const CORE_LIGHT_COLOR:uint = 0xFFFFFF;
 		static public const BOUNDARY_RADIUS:Number = 1000;

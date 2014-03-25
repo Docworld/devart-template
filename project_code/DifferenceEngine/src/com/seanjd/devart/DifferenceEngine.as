@@ -9,6 +9,7 @@ package com.seanjd.devart {
 	import com.seanjd.devart.models.SignatureData;
 	import com.seanjd.devart.views.BoundaryContainer;
 	import com.seanjd.devart.views.ParticleContainer;
+	import com.seanjd.devart.views.ParticleGenerator;
 	import com.seanjd.devart.views.SignatureParticle;
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -28,8 +29,10 @@ package com.seanjd.devart {
 		private var _coreLight:PointLight;
 		private var _directionalLight:DirectionalLight;
 		
+		private var _particleGenerator:ParticleGenerator;
 		private var _boundaryContainer:BoundaryContainer;
 		private var _mainParticleContainer:ParticleContainer;
+		private var camZ:Number = 0;;
 		
 		static public var lightPicker:StaticLightPicker;
 		
@@ -49,13 +52,16 @@ package com.seanjd.devart {
 			if(Settings.DEBUG) addChild(new AwayStats(_view));
 			
 			//setup the camera
-			_view.camera.z = -1200;
+			_view.camera.z = -200;
 			_view.camera.y = 5;
 			_view.camera.lookAt(new Vector3D());
 			
 			//add a light in centre of scene
-			_coreLight = addPointLight(0, 0, -500, 1500, Settings.CORE_LIGHT_COLOR);
+			_coreLight = addPointLight(0, 0, -1000, 1200, Settings.CORE_LIGHT_COLOR);
 			_view.scene.addChild(_coreLight);
+			var pLight2 = addPointLight(100, 100, 100, 130, Settings.CORE_LIGHT_COLOR);
+			_view.scene.addChild(pLight2);
+			
 			_directionalLight = addDirectionalLight();
 			_view.scene.addChild(_directionalLight);
 			
@@ -64,10 +70,14 @@ package com.seanjd.devart {
 			//_boundaryContainer = new BoundaryContainer();
 			//_view.scene.addChild(_boundaryContainer);
 			
-			_mainParticleContainer = new ParticleContainer();
-			_view.scene.addChild(_mainParticleContainer);
+			//_mainParticleContainer = new ParticleContainer();
+			//_view.scene.addChild(_mainParticleContainer);
+			
+			_particleGenerator = new ParticleGenerator();
+			_view.scene.addChild(_particleGenerator);
 			
 			addEventListener(Event.ENTER_FRAME, render);
+			addEventListener(MouseEvent.CLICK, _particleGenerator.updateRandomly);
 		}
 
 		private function addPointLight(xPos:Number, yPos:Number, zPos:Number, falloff:Number, color:uint):PointLight {
@@ -90,8 +100,9 @@ package com.seanjd.devart {
 		
 		//main render loop
 		private function render(e:Event):void {
-			_mainParticleContainer.rotationX -= 0.05
-			_mainParticleContainer.rotationY += 0.5;
+			trace("render");
+			//_mainParticleContainer.rotationX -= 0.05
+			//_mainParticleContainer.rotationY += 0.5;
 			_view.render();
 		}
 		
