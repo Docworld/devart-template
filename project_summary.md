@@ -16,13 +16,42 @@ The visitor’s ‘unique digital signature’ will then be presented to them at
 
 The core of the installation will be a mesmerising 3D graphics piece projected onto a wraparound screen using multiple projectors. This will start off as an empty void but will come to life as soon as the first participant contributes their personal recording. When adding their 3D particle signature to the collective it has a combined effect on the whole scene. The combined data will be put through an algorithm which will drive several properties of the scene and its particle system including the geometry, velocity, colour, lighting and textures. This will be done through a set of vertex and fragment shaders, along with controlling camera and light properties within the scene. As well as driving inputs to the graphics system this collective data will be modulated onto an ambient audio signal played back in the space via a surround-sound. 
 
-Over time as more people contribute their messages the combined form will evolve from nothingness to a beautiful and mesmerising 3D particle system, shot from several virtual viewpoints and stitched together to form a wraparound environment. As the piece evolves we will begin to see mood changes from the collective whole which will have an impact on the sound and visuals which in turn will also affect the next set of contributors. This will signify how the small and seemingly inconsequent positive actions we perform add up to a combined effect which is greater than the sum of its parts.
+Over time as more people contribute their [different] messages to the [engine] the combined form will evolve from nothingness to a beautiful and mesmerising 3D particle system, shot from several virtual viewpoints and stitched together to form a wraparound environment. As the piece evolves we will begin to see mood changes from the collective whole which will have an impact on the sound and visuals which in turn will also affect the next set of contributors. This will signify how the small and seemingly inconsequent positive actions we perform add up to a combined effect which is greater than the sum of its parts.
 
-## Link to Prototype
-Coming soon
 
-## Example Code
-Coming soon
+##Code snippets
+####init
+```
+
+	var differenceEngine:DifferenceEngine = new DifferenceEngine();
+	differenceEngine.init();
+	SignalHub.addSignature.add(updateEngine);
+
+	private function updateEngine(signatureData:SignatureData):void{
+		differenceEngine.inject(signatureData);
+	}
+
+```
+
+####signature data structure
+```
+
+	public class SignatureData{
+		private var _id:uint;//user is anonymous, simply for internal id
+		private var _eyeCol:uint;//average hex value
+		private var _bpm:Number;//average heart rate 
+		private var _heartData:ByteArray;//stores entire graph as BA
+		private var _message:ByteArray;//stores audio msg as BA
+		
+		private var _positions:Vector.<Point3D> = new Vector.<Point3D>;
+		private var _geoms:Vector.<Geometry> = new Vector.<Geometry>;
+		private var _mats:Vector.<MaterialBase> = new Vector.<MaterialBase>;
+		
+		public function SignatureData(id:uint,eyeCol:uint,bpm:Number,heartData:ByteArray,message:ByteArray) {
+			//init
+		}
+
+```
 
 ##Technologies
 
@@ -77,3 +106,4 @@ Coming soon
 
 - Thanks to Abi Tura for the concept inspiration
 - Thanks to Pedro Chambino for the Pulse lib and advice on integration
+- Thanks to Devon McFarlane for teaching me some of his AE skills 
