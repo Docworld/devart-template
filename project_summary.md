@@ -108,4 +108,4 @@ Over time as more people contribute their [different] messages to the [engine] t
 
 - Thanks to Abi Tura for the concept inspiration
 - Thanks to Pedro Chambino for the Pulse lib and advice on integration
-- Thanks to Devon McFarlane for teaching me some of his AE skills 
+- Thanks to Devon McFarlane for his AE skills 
