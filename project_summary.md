@@ -20,7 +20,9 @@ Over time as more people contribute their [different] messages to the [engine] t
 
 
 ##Code snippets
+
 ####init
+
 ```
 
 	var differenceEngine:DifferenceEngine = new DifferenceEngine();
