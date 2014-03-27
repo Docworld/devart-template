@@ -1,6 +1,5 @@
 package com.seanjd.devart {
 	
-	
 	/**
 	 * @author SeanJamesDuffy
 	 */
@@ -14,14 +13,13 @@ package com.seanjd.devart {
 		}
 		
 		public function init():void {
+			
 			_voxView = new VoxView();
 			Main.st.addChild(_voxView);
-			
+		
 			_voxInput = new VoxInput();
 			//_voxInput.initMP3();
 			_voxInput.initFFTMic();
 		}
-		
 	}
-
 }
