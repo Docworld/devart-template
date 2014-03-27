@@ -43,10 +43,13 @@ The rest of the code has been checked in (a test app so in a new directory calle
 Here are some screenshots to display the particle system growing - I'm getting decent frame rates whilst rendering but not whilst screencasting to video too, so I'm just using stills for this post.
 
 ####grab 1
+
 ![Shot1](../project_images/particles/MultiViewParticles_1.jpg?raw=true "Shot1")
 
 ####grab 2
+
 ![Shot2](../project_images/particles/MultiViewParticles_2.jpg?raw=true "Shot2")
 
 ####grab 3
+
 ![Shot3](../project_images/particles/MultiViewParticles_3.jpg?raw=true "Shot3")
