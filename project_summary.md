@@ -53,9 +53,12 @@ Coming soon
 
 ## Links to External Libraries
 
-- [https://github.com/pchambino/pulse](https://github.com/pchambino/pulse)
-- [https://github.com/away3d/](https://github.com/away3d/)
-- [https://github.com/simppafi/evoSpicyParticleEngine](https://github.com/simppafi/evoSpicyParticleEngine)
+- [Pulse](https://github.com/pchambino/pulse)
+- [Away3D](https://github.com/away3d/)
+- [Evo Spicy](https://github.com/simppafi/evoSpicyParticleEngine)
+- [Signals (Robert Penner's implementation)](https://github.com/robertpenner/as3-signals)
+- [FFT](http://gerrybeauregard.wordpress.com/2010/08/03/an-even-faster-as3-fft/)
+
 
 
 ## Images & Videos

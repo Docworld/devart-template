@@ -37,7 +37,7 @@ package com.seanjd.devart.views {
 		public function ParticleContainer() {
 			super();
 			
-			material = new ColorMaterial(0xCCCCCC);
+			material = new ColorMaterial(0xFFFFFF);
 			material.lightPicker = DifferenceEngine.lightPicker;;
 			
 			//var p:SignatureParticle = new SignatureParticle(new SignatureData());

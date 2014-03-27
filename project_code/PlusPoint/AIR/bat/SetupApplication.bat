@@ -39,7 +39,7 @@ set DIST_PATH=dist
 set DIST_NAME=PlusPoint
 
 :: Debugging using a custom IP
-set DEBUG_IP=
+set DEBUG_IP=10.0.5.62
 
 
 

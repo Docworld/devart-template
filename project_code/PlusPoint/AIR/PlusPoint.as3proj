@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="bin\PlusPoint.swf" />
     <movie fps="30" />
-    <movie width="480" />
-    <movie height="762" />
+    <movie width="540" />
+    <movie height="960" />
     <movie version="3" />
     <movie minorVersion="9" />
     <movie platform="AIR Mobile" />
@@ -16,6 +16,7 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
+    <class path="lib" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -52,7 +53,9 @@
   </includeLibraries>
   <!-- SWC Libraries -->
   <libraryPaths>
-    <!-- example: <element path="..." /> -->
+    <element path="res\swc\vox.swc" />
+    <element path="lib\swc\greensock.swc" />
+    <element path="lib\swc\as3-signals-v0.9-BETA.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

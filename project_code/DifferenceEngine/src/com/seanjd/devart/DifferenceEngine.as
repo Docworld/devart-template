@@ -5,12 +5,15 @@ package com.seanjd.devart {
 	import away3d.lights.DirectionalLight;
 	import away3d.lights.PointLight;
 	import away3d.materials.lightpickers.StaticLightPicker;
+	import away3d.materials.TextureMaterial;
+	import away3d.textures.BitmapTexture;
 	import com.seanjd.devart.models.Settings;
 	import com.seanjd.devart.models.SignatureData;
 	import com.seanjd.devart.views.BoundaryContainer;
 	import com.seanjd.devart.views.ParticleContainer;
 	import com.seanjd.devart.views.ParticleGenerator;
 	import com.seanjd.devart.views.SignatureParticle;
+	import flash.display.Bitmap;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
@@ -23,6 +26,10 @@ package com.seanjd.devart {
 	 */
 	
 	public class DifferenceEngine extends Sprite {
+		
+		[Embed(source="../../../../res/img/bgBgd.jpg")]
+		private var Bgd:Class;
+		private var bgd:Bitmap;
 		
 		private var _view:View3D;
 		//lights
@@ -45,6 +52,7 @@ package com.seanjd.devart {
 			
 			//setup the view
 			_view = new View3D();
+			//_view.antiAlias = 3;
 			addChild(_view);
 			
 			//adds stats counter to check frame-rates etc
@@ -54,6 +62,9 @@ package com.seanjd.devart {
 			_view.camera.z = -1200;
 			_view.camera.y = 5;
 			_view.camera.lookAt(new Vector3D());
+			
+			bgd = new Bgd();
+			_view.background = new BitmapTexture(bgd.bitmapData);
 			
 			//add a light in centre of scene
 			_coreLight = addPointLight(0, 0, -1000, 1200, Settings.CORE_LIGHT_COLOR);
@@ -70,10 +81,11 @@ package com.seanjd.devart {
 			_mainParticleContainer = new ParticleContainer();
 			_view.scene.addChild(_mainParticleContainer);
 			
-			//_particleGenerator = new ParticleGenerator();
-			//_view.scene.addChild(_particleGenerator);
+			_particleGenerator = new ParticleGenerator();
+			_view.scene.addChild(_particleGenerator);
 			
 			addEventListener(Event.ENTER_FRAME, render);
+			if(_particleGenerator) addEventListener(MouseEvent.CLICK, _particleGenerator.updateRandomly);
 		}
 
 		private function addPointLight(xPos:Number, yPos:Number, zPos:Number, falloff:Number, color:uint):PointLight {
@@ -82,7 +94,7 @@ package com.seanjd.devart {
 			pointLight.x = xPos;
 			pointLight.y = yPos;
 			pointLight.z = zPos;
-			pointLight.specular = 0;
+			pointLight.specular = 10;
 			pointLight.radius = 50;
 			pointLight.fallOff = falloff;
 			pointLight.color = color;
@@ -96,8 +108,10 @@ package com.seanjd.devart {
 		
 		//main render loop
 		private function render(e:Event):void {
-			_mainParticleContainer.rotationX -= 0.05
-			_mainParticleContainer.rotationY += 0.5;
+			if(_mainParticleContainer){
+				_mainParticleContainer.rotationX -= 0.05
+				_mainParticleContainer.rotationY += 0.5;
+			}
 			_view.render();
 		}
 		

@@ -20,7 +20,8 @@ package com.seanjd.devart.views {
 	
 	public class ParticleGenerator extends ObjectContainer3D {
 		
-		private const COLORS:Vector.<uint> = Vector.<uint>([0xccf057, 0xa2bcb5, 0x688afc, 0x643e88, 0xd49992, 0x4ec978, 0xee9c92, 0xe58d3, 0x8b8ef4, 0xee5540, 0x5d681, 0x72af53, 0xe50000, 0xcc0000, 0xb20000, 0x990000, 0x7f0000, 0xff1919, 0xff3232, 0xff9999]);
+		private const COLORS:Vector.<uint> = Vector.<uint>([0xFFFFFF, 0x88e1ff, 0x52faa2]);
+		//([0xccf057, 0xa2bcb5, 0x688afc, 0x643e88, 0xd49992, 0x4ec978, 0xee9c92, 0xe58d3, 0x8b8ef4, 0xee5540, 0x5d681, 0x72af53, 0xe50000, 0xcc0000, 0xb20000, 0x990000, 0x7f0000, 0xff1919, 0xff3232, 0xff9999]);
 		
 		private var _merge:Merge;
 		private var _mesh:Mesh;
@@ -38,7 +39,8 @@ package com.seanjd.devart.views {
 			_mesh = new Mesh(new Geometry());
 			addChild(_mesh);
 			
-			//Main.ref.addEventListener(Event.ENTER_FRAME, updateRotations);
+			var sp:Sprite = new Sprite();
+			sp.addEventListener(Event.ENTER_FRAME, updateRotations);
 			
 			updateRandomly();
 		}
@@ -59,7 +61,7 @@ package com.seanjd.devart.views {
 
 			var numGeoms:int = 2 + Math.ceil(Math.random() * 6);
 			for (var i:int = 0; i < numGeoms; i++) addRandomMeshToGeometry(i, color);	
-			addNoise();
+			//addNoise();
 			
 			randomiseRotations();
 		}
@@ -89,7 +91,7 @@ package com.seanjd.devart.views {
 		
 		private function addRandomMeshToGeometry(index:int, color:uint):void {
 			var positionMultiplier:Number = 12;
-			var segs:int = 4 + Math.ceil(Math.random() * 12);
+			var segs:int = 14 + Math.ceil(Math.random() * 12);
 			var geometry:Geometry = new SphereGeometry((10-(index*2))+Math.random() * 4, segs, segs);
 			var mesh:Mesh = new Mesh(geometry, getRandomMaterial(color));
 			mesh.x = Math.sin(Math.random()) * index * positionMultiplier;
