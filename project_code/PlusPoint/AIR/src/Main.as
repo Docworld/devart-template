@@ -16,7 +16,7 @@ package {
 	 * @author SeanJamesDuffy
 	 */
 	
-	[SWF(width=1920, height=1080, backgroundColor=0x000000, frameRate=60)]
+	[SWF(width=1920, height=1080, backgroundColor=0x000000, frameRate=25)]
 	public class Main extends Sprite {
 		
 		static public var st:Stage;

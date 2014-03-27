@@ -18,8 +18,8 @@ package com.seanjd.devart {
 			Main.st.addChild(_voxView);
 			
 			_voxInput = new VoxInput();
-			_voxInput.initMP3();
-			//_voxInput.initFFTMic();
+			//_voxInput.initMP3();
+			_voxInput.initFFTMic();
 		}
 		
 	}
