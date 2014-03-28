@@ -1,4 +1,4 @@
-I'm now rendering the 3D scene from 4 different viewpoints and displaying each one through a separate app window. This means that our final live scene can be shot from 4 virtual cameras and the output of these will be fed back through 4 projectors to re-create the scene. Any kind of view transformations can be applied to fit these to the final display (be it a wraparound cylinder or dome) but for this example (just atechnical proof of concept) I'm putting 4 cameras facing in 4 opposite corners and rendering the center of the 3D scene (world co-ordinates 0,0,0). 
+I'm now rendering the 3D scene from 4 different viewpoints and displaying each one through a separate app window. This means that our final live scene can be shot from 4 virtual cameras and the output of these will be fed back through 4 projectors to re-create the scene. Any kind of view transformations can be applied to fit these to the final display (be it a wraparound cylinder or dome) but for this example (just a technical proof of concept) I'm putting 4 cameras facing in 4 opposite corners and rendering the center of the 3D scene (world co-ordinates 0,0,0). 
 
 ####code snippet
 
@@ -41,6 +41,8 @@ I'm now rendering the 3D scene from 4 different viewpoints and displaying each o
 The rest of the code has been checked in (a test app so in a new directory called 'MultiView') 
 
 Here are some screenshots to display the particle system growing - I'm getting decent frame rates whilst rendering but not whilst screencasting to video too, so I'm just using stills for this post.
+
+These are combined into a single screen (1680x1050 pixels) but in the final version each output will be full HD (i.e. 1920x1080x4)
 
 ####grab 1
 
